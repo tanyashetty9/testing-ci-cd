@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invitation Link</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f8fb;
+      margin: 0;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .email-wrapper {
+      background: #fff;
+      max-width: 480px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px 25px;
+      text-align: left;
+      box-sizing: border-box;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      width: 30px;
+      margin-right: 10px;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #1d1d1f;
+      margin-bottom: 20px;
+    }
+    .content {
+      font-size: 16px;
+      color: #3c3c43;
+      line-height: 1.5;
+    }
+    .content p {
+      margin: 10px 0;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: #3cd0b2;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 24px;
+      margin: 20px 0;
+      border-radius: 8px;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .footer-note {
+      font-size: 14px;
+      color: #6c6c6c;
+      margin-top: 10px;
+    }
+
+    /* Logo switching based on color scheme */
+    .logo-light {
+      display: block !important;
+    }
+    .logo-dark {
+      display: none !important;
+    }
+
+    /* Dark mode styles */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #1a1a1a;
+      }
+      .email-wrapper {
+        background: #2d2d2d;
+        color: #ffffff;
+      }
+      .title {
+        color: #ffffff;
+      }
+      .content {
+        color: #e0e0e0;
+      }
+      .footer-note {
+        color: #b0b0b0;
+      }
+      
+      /* Switch logos in dark mode */
+      .logo-light {
+        filter: brightness(0) invert(1);
+      }    
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+      .email-wrapper {
+        padding: 20px 15px;
+      }
+      .title {
+        font-size: 20px;
+      }
+      .content {
+        font-size: 15px;
+      }
+      .cta-button {
+        padding: 14px 20px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      body {
+        padding: 10px;
+      }
+      .email-wrapper {
+        padding: 15px 12px;
+      }
+      .title {
+        font-size: 18px;
+      }
+      .content {
+        font-size: 14px;
+      }
+      .footer-note {
+        font-size: 13px;
+      }
+      .logo img {
+        width: 25px;
+        margin-right: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+    <div class="logo" style="display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-weight: 600; font-size: 18px;">Food-Flow</span>
+      <img src="https://res.cloudinary.com/dwmbr1ts5/image/upload/v1752066761/Invenger_black_logo_tz9dyy.png" alt="Food-Flow Logo" class="logo-light" style="width: 90px; height: auto; display: block;" />
+    </div>
+    <div class="title">Invited to Food-Flow</div>
+    <div class="content">
+      <p>Hello {{username}},</p>
+      <p>You’ve been invited to <a href="https://food-portal.invenger.in/" target="_blank" style="color: #007bff; text-decoration: none;">Food-Flow</a>.</p>
+      <p>You can accept the invitation by clicking the button below:</p>
+      <a class="cta-button" href="{{link}}" target="_blank">Accept invitation</a>
+      <p class="footer-note">
+        If you don’t want to accept the invitation, just ignore this email.<br>
+        Your account won't be created until you access the link above and set your password.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
